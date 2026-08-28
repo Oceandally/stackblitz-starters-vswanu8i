@@ -8,17 +8,45 @@ body {
   background-color: #0c0c0e;
   color: #f1f1f4;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
 }
 
-.main-container {
+/* Master Layout Framework Container */
+.app-layout {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   min-height: 100vh;
+  width: 100vw;
 }
 
-/* Sidebar Ad Columns */
+/* Middle Section holding sidebars and main video frame console */
+.middle-row {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* Top & Bottom Ad Horizontal Strips Layout styling */
+.banner-ad {
+  width: 100%;
+  height: 90px; /* Standard Leaderboard banner height */
+  background-color: #141417;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #232329;
+}
+
+.bottom-ad {
+  border-bottom: none;
+  border-top: 1px solid #232329;
+}
+
+/* Vertical Sidebar Ad Layout styling */
 .side-ad {
-  width: 160px; /* Standard Skyscraper Ad size layout width */
+  width: 160px; /* Standard Skyscraper Ad width design framework */
   background-color: #141417;
   display: flex;
   align-items: center;
@@ -26,43 +54,48 @@ body {
   border-left: 1px solid #232329;
   border-right: 1px solid #232329;
   padding: 10px;
+  align-self: stretch; /* Forces sidebar to occupy whole row height area */
 }
 
 .ad-placeholder {
   color: #52525b;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 1px;
+  text-align: center;
 }
 
-/* Center Layout Area */
+/* Center Content Section Area layout properties */
 .center-content {
   flex: 1;
-  max-width: 900px;
+  max-width: 800px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 .logo {
   font-size: 2.5rem;
-  margin-bottom: 2rem;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
   color: #ff003c;
   text-shadow: 0 0 10px rgba(255, 0, 60, 0.2);
 }
 
 #input-section {
   width: 100%;
-  text-align: center;
 }
 
 .input-group {
   display: flex;
   gap: 10px;
   width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 #url-input {
@@ -104,9 +137,10 @@ button:hover {
 
 #video-room {
   width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
-/* 16:9 Aspect Ratio Box for Iframe */
 .video-wrapper {
   position: relative;
   width: 100%;
@@ -152,10 +186,9 @@ button:hover {
   display: none !important;
 }
 
-/* Responsive collapse on smaller windows */
-@media (max-width: 800px) {
+/* Responsive collapse options for small screen window viewports */
+@media (max-width: 850px) {
   .side-ad {
-    display: none; /* Hides side ads on mobile to keep video usable */
+    display: none; /* Collapses side boxes safely on mobile displays */
   }
 }
-

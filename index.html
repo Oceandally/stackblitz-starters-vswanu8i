@@ -1,30 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TubeVoid - Distraction Free Rooms</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="main-container">
-      <!-- Left Ad Banner -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TubeVoid - Distraction Free Rooms</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Full Screen Wrapper Grid Layout -->
+  <div class="app-layout">
+    
+    <!-- 1. Top Banner Ad Space -->
+    <header class="banner-ad top-ad">
+      <div class="ad-placeholder">Leaderboard Ad Space (Top)</div>
+    </header>
+
+    <div class="middle-row">
+      <!-- 2. Left Skyscraper Ad Column -->
       <aside class="side-ad left-ad">
-        <div class="ad-placeholder">Advertisement</div>
+        <div class="ad-placeholder">Skyscraper (Left)</div>
       </aside>
 
-      <!-- Center App Content -->
+      <!-- 3. Center Application Content Workspace -->
       <main class="center-content">
         <h1 class="logo">TubeVoid</h1>
-
+        
         <!-- Input Screen Area -->
         <section id="input-section">
           <div class="input-group">
-            <input
-              type="text"
-              id="url-input"
-              placeholder="Paste YouTube Video Link Here..."
-            />
+            <input type="text" id="url-input" placeholder="Paste YouTube Video Link Here...">
             <button onclick="loadVideo()">Open Room</button>
           </div>
           <p id="error-message" class="hidden"></p>
@@ -33,29 +38,28 @@
         <!-- Video Presentation Room -->
         <section id="video-room" class="hidden">
           <div class="video-wrapper">
-            <!-- CRITICAL: allowfullscreen must be kept here so the player loads without a server crash -->
-            <iframe
-              id="player-frame"
-              allowfullscreen
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
+            <iframe id="player-frame" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
           <div class="control-bar">
             <button class="btn-close" onclick="resetRoom()">Close Room</button>
-            <!-- THIS IS YOUR PAYING AD ACTION BUTTON -->
-            <button class="btn-fullscreen" onclick="triggerAdAndFullscreen()">
-              📺 View Fullscreen
-            </button>
+            <button class="btn-fullscreen" onclick="triggerAdAndFullscreen()">📺 View Fullscreen</button>
           </div>
         </section>
       </main>
 
-      <!-- Right Ad Banner -->
+      <!-- 4. Right Skyscraper Ad Column -->
       <aside class="side-ad right-ad">
-        <div class="ad-placeholder">Advertisement</div>
+        <div class="ad-placeholder">Skyscraper (Right)</div>
       </aside>
     </div>
 
-    <script src="script.js"></script>
-  </body>
+    <!-- 5. Bottom Banner Ad Space -->
+    <footer class="banner-ad bottom-ad">
+      <div class="ad-placeholder">Leaderboard Ad Space (Bottom)</div>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
 </html>
