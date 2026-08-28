@@ -1,0 +1,161 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0c0c0e;
+  color: #f1f1f4;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+/* Sidebar Ad Columns */
+.side-ad {
+  width: 160px; /* Standard Skyscraper Ad size layout width */
+  background-color: #141417;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid #232329;
+  border-right: 1px solid #232329;
+  padding: 10px;
+}
+
+.ad-placeholder {
+  color: #52525b;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Center Layout Area */
+.center-content {
+  flex: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #ff003c;
+  text-shadow: 0 0 10px rgba(255, 0, 60, 0.2);
+}
+
+#input-section {
+  width: 100%;
+  text-align: center;
+}
+
+.input-group {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+#url-input {
+  flex: 1;
+  padding: 15px;
+  background-color: #18181b;
+  border: 1px solid #27272a;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1rem;
+}
+
+#url-input:focus {
+  outline: none;
+  border-color: #ff003c;
+}
+
+button {
+  padding: 15px 25px;
+  background-color: #ff003c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background-color: #cc0030;
+}
+
+#error-message {
+  color: #ef4444;
+  margin-top: 15px;
+  font-size: 0.9rem;
+}
+
+#video-room {
+  width: 100%;
+}
+
+/* 16:9 Aspect Ratio Box for Iframe */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; 
+  height: 0;
+  background-color: #000;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.control-bar {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.btn-close {
+  background-color: #27272a;
+}
+.btn-close:hover {
+  background-color: #3f3f46;
+}
+
+.btn-fullscreen {
+  background-color: #22c55e;
+}
+.btn-fullscreen:hover {
+  background-color: #16a34a;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Responsive collapse on smaller windows */
+@media (max-width: 800px) {
+  .side-ad {
+    display: none; /* Hides side ads on mobile to keep video usable */
+  }
+}
+
